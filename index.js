@@ -18,40 +18,17 @@ var allSounds = [
 for (var i = 0; i < drumKit.length; i++) {
   drumKit[i].addEventListener("click", function () {
     this.style.color = "white";
-    var sound;
-    switch (this.innerHTML) {
-      case "w":
-        sound = allSounds[3];
-        break;
-      case "a":
-        sound = allSounds[4];
-        break;
-      case "s":
-        sound = allSounds[5];
-        break;
-      case "d":
-        sound = allSounds[6];
-        break;
-      case "j":
-        sound = allSounds[2];
-        break;
-      case "k":
-        sound = allSounds[1];
-        break;
-      case "l":
-        sound = allSounds[0];
-        break;
-      default:
-        console.log(this.innerHTML);
-    }
-    var audio = new Audio(sound);
-    audio.play();
+    playSound(this.innerHTML);
   });
 }
 
 document.addEventListener("keydown", function (event) {
+  playSound(event.key.toLowerCase());
+});
+
+function playSound(characterSent) {
   var sound;
-  switch (event.key.toLowerCase()) {
+  switch (characterSent) {
     case "w":
       sound = allSounds[3];
       break;
@@ -78,9 +55,9 @@ document.addEventListener("keydown", function (event) {
   }
   var audio = new Audio(sound);
   audio.play();
-});
+}
 
-/* NEW WAY
+/* NEW WAY FOR CREATING OBJECTS
 
 class Dinosaur {
   constructor(a, b) {
@@ -92,7 +69,7 @@ class Dinosaur {
 let dino = new Dinosaur("GigaSaur", 29);
 console.log(dino.a);*/
 
-/* OLD WAY
+/* OLD WAY FOR CREATING OBJECTS
 function DinosaurTwo(name, length) {
   this.name = name;
   this.length = length;
