@@ -49,6 +49,37 @@ for (var i = 0; i < drumKit.length; i++) {
   });
 }
 
+document.addEventListener("keydown", function (event) {
+  var sound;
+  switch (event.key.toLowerCase()) {
+    case "w":
+      sound = allSounds[3];
+      break;
+    case "a":
+      sound = allSounds[4];
+      break;
+    case "s":
+      sound = allSounds[5];
+      break;
+    case "d":
+      sound = allSounds[6];
+      break;
+    case "j":
+      sound = allSounds[2];
+      break;
+    case "k":
+      sound = allSounds[1];
+      break;
+    case "l":
+      sound = allSounds[0];
+      break;
+    default:
+      console.log(this.innerHTML);
+  }
+  var audio = new Audio(sound);
+  audio.play();
+});
+
 /* NEW WAY
 
 class Dinosaur {
