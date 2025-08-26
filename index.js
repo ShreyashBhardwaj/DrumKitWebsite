@@ -81,3 +81,19 @@ function DinosaurTwo(name, length) {
 let dino2 = new DinosaurTwo("Gigasuar", 25);
 
 dino2.roar();*/
+
+/*
+// HIGHER ORDER FUNCTION AND CALLBACK FUNCTION
+
+// WHEN ANY FUNCTION TAKES A FUNCTION AS A PARAMETER THEN IT IS CALLED A HIGHER ORDER FUNCTION AND THE FUNCTION USED
+// AS A PARAMETER IS CALLED CALLBACK FUNCTION
+
+document.addEventListener("keypress", respondToKey); //addEventListener is a Higher Order Function and it does not exactly
+// know that it is calling a function
+
+function respondToKey(event) {
+  //respondToKey is a callback function as we are calling that function back
+  console.log("Key PRESSED" + event);
+}
+
+*/
