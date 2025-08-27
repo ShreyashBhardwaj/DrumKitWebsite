@@ -17,13 +17,15 @@ var allSounds = [
 
 for (var i = 0; i < drumKit.length; i++) {
   drumKit[i].addEventListener("click", function () {
-    this.style.color = "white";
+    // this.style.color = "white";
     playSound(this.innerHTML);
+    buttonAnimation(this.innerHTML);
   });
 }
 
 document.addEventListener("keydown", function (event) {
   playSound(event.key.toLowerCase());
+  buttonAnimation(event.key.toLowerCase());
 });
 
 function playSound(characterSent) {
@@ -55,6 +57,14 @@ function playSound(characterSent) {
   }
   var audio = new Audio(sound);
   audio.play();
+}
+
+function buttonAnimation(currentKey) {
+  var activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
+  setTimeout(function () {
+    activeButton.classList.remove("pressed");
+  }, 100);
 }
 
 /* NEW WAY FOR CREATING OBJECTS
